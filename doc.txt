@@ -1,0 +1,3 @@
+terraform init -> read the provider and download the provider
+terraform plan -> it will check the syntax and understand what you are trying to do
+terraform apply -> now it will apply the infra
