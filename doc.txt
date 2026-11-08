@@ -41,3 +41,12 @@ preference
 3. env variables
 4. default  -> variables.tf 
 5. prompt
+
+
+interpolation -> you can mix normal text with variable value in double quotes
+"${var.project}-${var.environment}-common"
+
+
+
+
+
