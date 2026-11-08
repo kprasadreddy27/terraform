@@ -13,7 +13,7 @@ variable "instance_type" {
 variable "ami_id" {
   type        = string
   description = "AMI if of the ec2 instance"
-  default     = "ami-0055977a6e828a4f4"
+  # default     = "ami-0055977a6e828a4f4"
 }
 
 variable "ec2_tags" {
