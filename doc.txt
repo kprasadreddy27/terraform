@@ -50,3 +50,4 @@ interpolation -> you can mix normal text with variable value in double quotes
 
 
 
+terraform output -json > outputs.json
