@@ -6,3 +6,8 @@ terraform apply -> now it will apply the infra
 terraform apply -auto-approve
 
 terraform destroy -auto-approve
+
+IaaC tools like terraform follows declarative way of creating infra
+
+providers -> a plugin that let terraform to connect with platform API to CRUD the resources
+
