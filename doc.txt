@@ -1,7 +1,7 @@
 terraform init -> read the provider and download the provider
 terraform plan -> it will check the syntax and understand what you are trying to do
 terraform apply -> now it will apply the infra
-
+terraform destroy -> delete the infra
 
 terraform apply -auto-approve
 
@@ -11,3 +11,33 @@ IaaC tools like terraform follows declarative way of creating infra
 
 providers -> a plugin that let terraform to connect with platform API to CRUD the resources
 
+terraform.tfvars -> this will be automatically conside
+
+terraform plan/apply -var-file=dev.tfvars  (for other files we need to provide in cmd line like this)
+
+environment variables:
+export TF_VAR_instance_type="t3.micro"  - > ubuntu
+set TF_VAR_instance_type="t3.micro"   -> windows
+
+command line variables: 
+terraform plan -var="instance_type=t3.medium"
+
+
+1. default values 
+2. terraform.tfvars or *.tfvars
+3. env variables
+4. command line
+5. prompt
+
+default -> t3.micro
+terraform.tfvars -> t3.small
+env variable -> t3.medium
+command line-> t3.large
+
+preference
+-----------
+1. command line
+2. tfvars
+3. env variables
+4. default  -> variables.tf 
+5. prompt

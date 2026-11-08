@@ -4,10 +4,10 @@ variable "instance_type" {
   default     = "t3.micro"
 
   # Optional validation rules
-  # validation {
-  #  condition     = contains(["t2.micro", "t3.micro"], var.instance_type)
-  #  error_message = "Only micro instances are allowed for this environment."
-  # }
+   validation {
+    condition     = contains(["t2.micro", "t3.micro"], var.instance_type)
+    error_message = "Only micro instances are allowed for this environment."
+   }
 }
 
 variable "ami_id" {
