@@ -1,5 +1,6 @@
 module "ec2" {
-    source = "../terraform-module-or-function"
+  # source = "../terraform-module-or-function"
+    source = "git::https://github.com/kprasadreddy27/terraform.git//terraform-module-or-function?ref=main"
     environment = var.project
     project = "genesis"
     component = "mysql"
