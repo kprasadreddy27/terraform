@@ -18,7 +18,7 @@ resource "terraform_data" "bootstrap" {
     type        = "ssh"
     user        = "ec2-user"
     password= "DevOps321"
-    host        = self.public_ip
+    host        = aws_instance.mongodb.priviate_id
   }
 
   # 2. Copy a script file from your local machine to the server
