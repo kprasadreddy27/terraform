@@ -18,12 +18,6 @@ variable "instance_type" {
    }
 }
 
-variable "instances" {
-    type = list
-    # default = ["mongodb", "redis", "mysql", "rabbitmq", "catalogue", "user", "cart", "shipping", "payment", "frontend"]
-    default = ["mongodb", "redis", "mysql", "rabbitmq"]
-}
-
 variable "zone_id" {
     default = "Z0833501NF3BMOKRFTAH"
 }
