@@ -31,13 +31,13 @@ resource "aws_iam_policy" "mysql" {
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
-  policy = templatefile("${path.module}/mysql-policy.json.tftpl, {
+  policy = templatefile("${path.module}/mysql-policy.json.tftpl", {
     account_id = local.account_id
     project    = "${var.project}"
     environment = "${var.environment}"
   })
 
-    tags = merge(
+  tags = merge(
     local.common_tags,
     {
         Name = "${var.project}-${var.environment}-mysql"
