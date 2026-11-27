@@ -26,7 +26,7 @@ resource "aws_iam_role" "mysql" {
 }
 
 resource "aws_iam_policy" "mysql" {
-  name        = "test_policy"
+  name        = "${var.project}-${var.environment}-mysql"
   description = "IAM Policy to attach Roboshop MySql instance"
 
   # Terraform's "jsonencode" function converts a
@@ -83,7 +83,7 @@ resource "aws_iam_role" "rabbitmq" {
 }
 
 resource "aws_iam_policy" "rabbitmq" {
-  name        = "test_policy"
+  name        = "${var.project}-${var.environment}-rabbitmq"
   description = "IAM Policy to attach Roboshop rabbitmq instance"
 
   # Terraform's "jsonencode" function converts a
