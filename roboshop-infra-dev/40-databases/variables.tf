@@ -17,3 +17,17 @@ variable "instance_type" {
     error_message = "Only micro instances are allowed for this environment."
    }
 }
+
+variable "instances" {
+    type = list
+    # default = ["mongodb", "redis", "mysql", "rabbitmq", "catalogue", "user", "cart", "shipping", "payment", "frontend"]
+    default = ["mongodb", "redis", "mysql", "rabbitmq"]
+}
+
+variable "zone_id" {
+    default = "Z0833501NF3BMOKRFTAH"
+}
+
+variable "domain_name" {
+    default = "kpraws.shop"
+}
