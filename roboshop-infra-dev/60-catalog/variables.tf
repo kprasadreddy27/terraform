@@ -25,3 +25,8 @@ variable "instance_type" {
     error_message = "Only micro instances are allowed for this environment."
    }
 }
+
+variable "app_version" {
+    default = "v4"
+}
+
