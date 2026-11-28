@@ -1,8 +1,8 @@
-# MongoDB is accepting connections from catalog on port number 27017
-resource "aws_vpc_security_group_ingress_rule" "mongodb_catalog" {
+# MongoDB is accepting connections from catalogue on port number 27017
+resource "aws_vpc_security_group_ingress_rule" "mongodb_catalogue" {
   security_group_id = local.mongodb_sg_id # destination, where you are creating the rule
 
-  referenced_security_group_id = local.catalog_sg_id # source, where is traffic comming from
+  referenced_security_group_id = local.catalogue_sg_id # source, where is traffic comming from
   # description       = "Allow HTTP from anywhere"
   # cidr_ipv4         = "0.0.0.0/0"
   from_port         = 27017
@@ -106,10 +106,10 @@ resource "aws_vpc_security_group_ingress_rule" "rabbitmq_bastion" {
   to_port           = 22
 }
 
-### catalog ###
+### catalogue ###
 
-resource "aws_vpc_security_group_ingress_rule" "catalog_backend_alb" {
-  security_group_id = local.catalog_sg_id # destination, where you are creating the rule
+resource "aws_vpc_security_group_ingress_rule" "catalogue_backend_alb" {
+  security_group_id = local.catalogue_sg_id # destination, where you are creating the rule
 
   referenced_security_group_id = local.backend_alb_sg_id # source, where is traffic comming from
   from_port         = 8080
@@ -117,8 +117,8 @@ resource "aws_vpc_security_group_ingress_rule" "catalog_backend_alb" {
   to_port           = 8080
 }
 
-resource "aws_vpc_security_group_ingress_rule" "catalog_cart" {
-  security_group_id = local.catalog_sg_id # destination, where you are creating the rule
+resource "aws_vpc_security_group_ingress_rule" "catalogue_cart" {
+  security_group_id = local.catalogue_sg_id # destination, where you are creating the rule
 
   referenced_security_group_id = local.cart_sg_id # source, where is traffic comming from
   from_port         = 8080
@@ -126,8 +126,8 @@ resource "aws_vpc_security_group_ingress_rule" "catalog_cart" {
   to_port           = 8080
 }
 
-resource "aws_vpc_security_group_ingress_rule" "catalog_bastion" {
-  security_group_id = local.catalog_sg_id # destination, where you are creating the rule
+resource "aws_vpc_security_group_ingress_rule" "catalogue_bastion" {
+  security_group_id = local.catalogue_sg_id # destination, where you are creating the rule
 
   referenced_security_group_id = local.bastion_sg_id # source, where is traffic comming from
   from_port         = 22
